@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Blog Home!</title>
-</head>
-<body>
+{% extends "blog/base.html" %}
+{% block content %}
 <h1>My blog Posts</h1>
 <div>
 	{%  for post in posts %}
@@ -14,5 +10,4 @@
 	</div>
 	{% endfor %}
 </div>
-</body>
-</html>
+{% endblock content %}
