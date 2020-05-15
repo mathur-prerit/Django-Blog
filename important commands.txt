@@ -1,0 +1,31 @@
+django-admin startproject ...
+
+python manage.py startapp ...
+
+python manage.py makemigrations ...
+
+python manage.py migrate
+
+python manage.py runserver 0.0.0.0:8000
+
+python manage.py sqlmigrate .appname. .migrationname.
+
+python manage.py shell
+	from *app*.models import *Modelname*
+
+	{
+	*Modelname*.objects.all()
+						.first()
+						.filter(tablefield='dataname')
+
+			User.objects.get(id=1)
+	}
+
+	{
+	post_1=*Modelname*(tablefield='data')
+	post_1.save()
+	}
+
+	{
+	user.post_set.all()
+	user.post_set.create(tablefield='data')
