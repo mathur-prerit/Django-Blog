@@ -6,6 +6,7 @@
 	<div>
 		<h3>{{ post.title }}</h3>
 		<h5>{{ post.author }}</h5>
+		<img src="{{ post.author.profile.image.url }}">
 		<h5>{{ post.date_posted|date:"d F, Y" }}</h5>
 		<p>{{ post.description }}</p>
 	</div>
