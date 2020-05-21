@@ -9,5 +9,11 @@
 		<h5>{{ object.date_posted|date:"d F, Y" }}</h5>
 		<p>{{ object.description }}</p>
 	</div>
+	{% if user == object.author %}
+	<div>
+		<button><a href="/blog/{{ object.id }}/update/">Update Post</a></button>
+		<button><a href="/blog/{{ object.id }}/delete/">Delete Post</a></button>
+	</div>
+	{% endif %}
 </div>
 {% endblock content %}
