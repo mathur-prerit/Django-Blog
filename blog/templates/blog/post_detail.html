@@ -4,7 +4,7 @@
 <div>
 	<div>
 		<h3>{{ object.title }}</h3>
-		<h5>{{ object.author }}</h5>
+		<h5><a href="/blog/user/{{ post.author.username }}">{{ post.author }}</a></h5>
 		<img src="{{ object.author.profile.image.url }}">
 		<h5>{{ object.date_posted|date:"d F, Y" }}</h5>
 		<p>{{ object.description }}</p>

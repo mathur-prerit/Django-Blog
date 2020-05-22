@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<h1>My blog Posts</h1>
+<h1>{{ view.kwargs.username }} ({{ page_obj.paginator.count }}) Posts</h1>
 <div>
 	{%  for post in posts %}
 	<div>

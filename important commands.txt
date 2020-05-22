@@ -29,3 +29,37 @@ python manage.py shell
 	{
 	user.post_set.all()
 	user.post_set.create(tablefield='data')
+	}
+
+	for json upload
+	{
+	import json
+	from blog.models import Post
+	with open('filename.json') as f:
+	posts_json=json.load(f)
+
+	for post in posts_json:
+	post=Post(title=post['title'],
+	description=post['title'],
+	author_id=post['user_id'])
+
+	post.save()
+	}
+
+	{
+	from django.core.paginator import Paginator
+	posts=['1','2','3','4','5']
+	p=Paginator(posts,2)
+	p.num_pages
+
+	for page in p.page_range:
+	p1=p.page(1) 
+
+	p1.number
+	p1.object_list
+	p1.has_previous()
+
+	p1.has_next()
+
+	p1.next_page_number()
+	}

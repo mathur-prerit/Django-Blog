@@ -1,4 +1,5 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
+from django.contrib.auth.models import User
 # from django.http import HttpResponse
 from .models import Post
 from django.contrib import messages
@@ -18,6 +19,18 @@ class PostListView(ListView):
 	template_name='blog/blog_home.html' # <app>/<model>_<viewtype>.html
 	context_object_name='posts'
 	ordering=['-date_posted']
+	paginate_by=5
+
+class UserPostListView(ListView):
+	model=Post
+	context_object_name='posts'
+	paginate_by=5
+
+	def get_query_set(self):
+		user=get_object_or_404(User,username=self.kwargs.get('username'))
+		print('----------------------->',user)
+		return Post.objects.filter(author=user).order_by('-date_posted')
+
 
 class PostDetailView(DetailView):
 	model=Post
