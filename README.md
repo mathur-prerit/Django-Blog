@@ -1,7 +1,8 @@
 For Python
 
 Create environment in the project directory ----> python3 -m venv env
-Activate my env ----> source env/bin/activate
+Activate my env ----> source env/bin/activate(Linux)
+env\Scripts\activate(Windows)
 Generating a new requirements.txt ----> pip3 freeze > requirements.txt
 USing requirements.txt ----> pip3 install -r requirements.txt
 For Javascript
